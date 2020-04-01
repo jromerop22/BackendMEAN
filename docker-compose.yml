@@ -1,0 +1,35 @@
+version: "3.7"
+services:
+  backend:
+    image: node:latest
+    container_name: servidorBack
+    working_dir: /code
+    command: [
+    "npm",
+    "run",
+    "dev"
+    ]    
+    env_file:
+    - entorno.env
+    volumes:
+    - .:/code
+    ports:
+    - "3001:3001"    
+    depends_on:
+    - mongoose
+    networks:
+      - my_net
+  mongoose:
+    image: mongo:latest
+    container_name: mongoBack
+    environment:
+       MONGO_INITDB_ROOT_USERNAME: root
+       MONGO_INITDB_ROOT_PASSWORD: 12345
+       MONGO_INITDB_DATABASE: Test
+    ports:
+        - 27017:27017    
+    networks:
+      - my_net
+networks:
+  my_net:
+    driver: bridge

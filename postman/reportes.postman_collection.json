@@ -1,0 +1,63 @@
+{
+	"info": {
+		"_postman_id": "ac90e501-b5c5-4178-92ff-c0f2ea01c234",
+		"name": "reportes",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "listar reporte",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3001/report",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"report"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "crear reporte",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"documento\": \"1032505399\",\n\t\"nombre\": \"jeisson stiven\",\n\t\"apellido\": \" romero paz\",\n\t\"fechaInicio\": \"2020-03-01\",\n\t\"fechaFin\": \"2020-03-02\",\n\t\"turnoInicio\": \"02:00\",\n\t\"turnoFin\": \"15:30\",\n\t\"horaExtraInicio\": \"22:00\",\n\t\"horaExtraFin\": \"00:00\",\n\t\"horaExtraMotivo\": \"EFECTIVO\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/report",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"report"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
