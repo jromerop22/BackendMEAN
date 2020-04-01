@@ -84,3 +84,6 @@ Crear entorno de trabajo local si dispone de docker
 ```sh
 docker-compose up -d
 ```
+
+## Postman
+contiene collections para importarlas en postman y probar rutas ../postman/
